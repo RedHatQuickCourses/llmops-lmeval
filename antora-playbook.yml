@@ -1,6 +1,6 @@
 site:
-  title: FIXME Course Title
-  start_page: REPLACEREPONAME::index.adoc
+  title: Evaluating Model Accuracy with LM-Eval-Harness
+  start_page: llmops-lmeval::index.adoc
 
 content:
   sources:

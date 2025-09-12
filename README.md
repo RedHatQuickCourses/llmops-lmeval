@@ -1,60 +1,32 @@
-## Getting started with a new training content repository
+# Evaluating Model Accuracy with lm-eval-harness
 
-- Open the [course-starter-template](https://github.com/RedHatQuickCourses/course-starter-template)
+## Introduction
 
-- Click on `Use This template` button and select `Create a new repository` option.
+**Course Title:** Evaluating Model Accuracy with lm-eval-harness
 
-![use-this-template.png](./images/use-this-template.png)
+**Description:**
+This course teaches you how to measure the task-level accuracy and reasoning quality of Large Language Models on Red Hat OpenShift AI. You will learn to use `lm-eval-harness`, an industry-standard benchmarking framework, delivered via the Trusty AI operator. This hands-on lab will guide you through setting up the environment, running standardized evaluations like ARC and MMLU, and interpreting the quantitative results to assess a model's true capabilities.
 
-- On `Create a new repository` page, Select the options as highlighted in the below image and then click `Create repository` button at the bottom of the page.
+**Duration:** 1.5 hours
 
-![create-new-repo.png](./images/create-new-repo.png)
+---
 
-- Clone this repository on your local system:
-```
-git clone git@github.com:RedHatQuickCourses/my-training-repository.git
-```
-NOTE: Use your repository url in the above command.
+## Objectives
 
-- Go in to the course repository directory and initialize the course.
-``` 
-cd my-training-repository/
-sh course-init.sh --type bfx --lab demo
-```
-NOTE: If you are using Mac, use *zsh* in place of *sh* in the above command.
+On completing this course, you should be able to:
 
-Sample output:
-```
-Initializing my-training-repository . . . done
+* Enable and configure the Trusty AI operator to run model evaluation jobs.
+* Configure and launch an `LMEvalJob` to test a deployed model against standard academic benchmarks.
+* Retrieve and interpret accuracy results, including raw accuracy, normalized accuracy, and standard error.
+* Run domain-specific tests to validate a model's knowledge and suitability for specialized enterprise tasks.
 
-Please replace the specified strings in the files below and commit the changes before proceeding with the course development.
-antora.yml:title: REPLACE Course Title
-```
+---
 
-- Edit the files prompted by course initialization script.
+## Prerequisites
 
-- Commit the changes done by course initialization script and your manual edits.
-```
- git status 
- git add -A; git commit -m "course initialization"
- git push origin main 
-```
+This course assumes that you have the following prior experience:
 
-- Browse your git repository url 
-
-- On your github repo page, on left hand side pane, click on settings gear icon near `About` heading.
-
-- Click `Use your GitHub Pages website` option to select (checked) it and then click `Save changes` button.
-
-![github-pages-setting](./images/github-pages-setting.png)
-
-- You should now see the link to access the rendered content within that same block.
-
-![quickcourse-rendered-url](./images/quickcourse-rendered-url.png)
-
-FIXME: highlight the relevant area on images.
-
-**SEE ALSO**
-
-- [Development using devspace](./DEVSPACE.md)
-- [Guideline for editing your content](./USAGEGUIDE.adoc)
+* Basic understanding of Large Language Models (LLMs) and the importance of accuracy validation.
+* Familiarity with using the OpenShift command-line interface (`oc`) to interact with a cluster.
+* Access to a Red Hat OpenShift AI cluster with an available GPU node and a deployed LLM inference service.
+* Administrative permissions to manage components within the DataScienceCluster resource.
