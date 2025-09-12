@@ -8,6 +8,7 @@
 Welcome to the course on Evaluating Model Accuracy with `lm-eval-harness`. While our previous course focused on system performance, this course will teach you how to measure a model's *quality* and *reasoning capabilities*.
 
 By the end of this course, you will be able to:
+
 * Use the Trusty AI operator to run standardized model evaluations.
 * Configure and launch an `LMEvalJob` to test a deployed model against a benchmark like MMLU-Pro.
 * Retrieve and interpret the accuracy results to understand a model's strengths and weaknesses.
