@@ -1,4 +1,4 @@
-= Module 4: Running a Domain-Specific Test
+= Running a Domain-Specific Test
 
 General benchmarks are useful, but for many enterprise use cases, you need to validate a model's knowledge in a specific domain. In this module, we will run a test focused on jurisprudence (the study of law) from the MMLU benchmark suite.
 

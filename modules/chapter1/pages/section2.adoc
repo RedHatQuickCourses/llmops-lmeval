@@ -1,4 +1,4 @@
-= Module 2: Running a Standard Evaluation Job
+= Running a Standard Evaluation Job
 
 With the environment ready, we can now define and run our first evaluation. We will test our `granite-8b` model against the **ARC Easy** benchmark, a grade-school science reasoning test.
 

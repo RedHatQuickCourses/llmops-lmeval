@@ -1,4 +1,4 @@
-= Module 3: Interpreting Accuracy Results
+= Interpreting Accuracy Results
 
 Once the evaluation job is complete, the results are stored directly in the `LMEvalJob` custom resource. This module explains how to retrieve and understand these results.
 

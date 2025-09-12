@@ -1,4 +1,4 @@
-= Module 1: Setting Up the Trusty AI Environment
+= Setting Up the Trusty AI Environment
 
 In this module, we will enable and configure the Trusty AI operator in OpenShift AI to prepare it for running evaluation jobs.
 
