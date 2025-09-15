@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Evaluating Model Accuracy with lm-eval-harness :: Evaluating Model Accuracy with LM-Eval-Harness</title>
+    <link rel="prev" href="mission.html">
+    <link rel="next" href="section1.html">
+    <meta name="generator" content="Antora 3.1.3">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://www.redhat.com" target="_blank"><img src="../../../_/img/redhat-logo.png" height="40px" alt="Red Hat"></a>
+      <a class="navbar-item" style="font-size: 24px; color: white" href="../../..">Evaluating Model Accuracy with LM-Eval-Harness</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://github.com/RedHatQuickCourses/REPLACEREPONAME/issues" target="_blank">Report Issues</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="llmops-lmeval" data-version="1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Evaluating Model Accuracy with LM-Eval-Harness</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Home</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../LABENV/index.html">Lab Environment</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="mission.html">Mission Two</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="index.html">Evaluating Model Accuracy with lm-eval-harness</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="section1.html">Setting Up the Trusty AI Environment</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="section2.html">Running a Standard Evaluation Job</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="section3.html">Interpreting Accuracy Results</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="section4.html">Running a Domain-Specific Test</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="section5.html">Course Wrap-up</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Evaluating Model Accuracy with LM-Eval-Harness</span>
+    <span class="version">1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Evaluating Model Accuracy with LM-Eval-Harness</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Evaluating Model Accuracy with LM-Eval-Harness</a></li>
+    <li><a href="index.html">Evaluating Model Accuracy with lm-eval-harness</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Evaluating Model Accuracy with lm-eval-harness</h1>
+<div class="sect1">
+<h2 id="_introduction_to_model_accuracy_evaluation"><a class="anchor" href="#_introduction_to_model_accuracy_evaluation"></a>Introduction to Model Accuracy Evaluation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Welcome to the course on Evaluating Model Accuracy. While our previous course focused on system performance, this course will teach you how to answer an equally critical question: "Is the model <strong>correct</strong>?"</p>
+</div>
+<div class="paragraph">
+<p>A fast model is great, but it&#8217;s only half the story. A model that is fast but inaccurate doesn&#8217;t just fail to add value—it can actively create risk for the business. This course will teach you how to measure a model&#8217;s <strong>task-level accuracy</strong> and <strong>reasoning capabilities</strong> using standardized, data-driven methods.</p>
+</div>
+<div class="sect2">
+<h3 id="_why_accuracy_evaluation_matters"><a class="anchor" href="#_why_accuracy_evaluation_matters"></a>Why Accuracy Evaluation Matters</h3>
+<div class="paragraph">
+<p>While performance metrics like latency and throughput are critical for an efficient service, task-level accuracy is essential for delivering a <strong>valuable</strong> and <strong>safe</strong> one. Here’s why this evaluation is a cornerstone of LLMOps:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Selecting the Right Model:</strong> How do you choose between Model A and a fine-tuned Model B? A higher price or larger parameter count doesn&#8217;t guarantee better performance on your specific task. Accuracy benchmarks give you the hard data needed to make an informed, cost-effective decision.</p>
+</li>
+<li>
+<p><strong>Validating After Optimization:</strong> You&#8217;ve just learned how to tune and quantize models to make them faster and cheaper to run. But did that optimization degrade the model&#8217;s quality? Running accuracy evaluations before and after optimization is the only way to ensure you haven&#8217;t sacrificed correctness for speed.</p>
+</li>
+<li>
+<p><strong>Building Trust and Ensuring Safety:</strong> Before deploying a model in a customer-facing or mission-critical application, you must be confident in its reliability. Formal evaluation helps identify weaknesses, biases, or gaps in a model&#8217;s knowledge, which is a critical step in risk management.</p>
+</li>
+<li>
+<p><strong>Justifying Investment (ROI):</strong> For fine-tuning projects, you need to prove that the investment of time and resources resulted in a tangible improvement. A higher accuracy score on a relevant business benchmark is the clearest way to demonstrate ROI.</p>
+</li>
+</ol>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="_what_is_lm_eval_harness"><a class="anchor" href="#_what_is_lm_eval_harness"></a>What is lm-eval-harness?</h3>
+<div class="paragraph">
+<p><strong>lm-eval-harness</strong> is a widely adopted, community-maintained benchmarking toolkit from <strong>EleutherAI</strong>. It provides a standardized framework for evaluating Large Language Models (LLMs) across dozens of academic benchmarks, ensuring consistent and reproducible results. It can test models on tasks ranging from question answering and common sense reasoning to complex, multi-subject examinations.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_what_is_trusty_ai"><a class="anchor" href="#_what_is_trusty_ai"></a>What is Trusty AI?</h3>
+<div class="paragraph">
+<p><a href="https://trustyai.org/docs/main/main" target="_blank" rel="noopener">TrustyAI</a> is Red Hat&#8217;s open-source AI explainability and trustworthiness platform. Within OpenShift AI, Trusty AI provides an enterprise-ready, operator-based way to run evaluation frameworks like <code>lm-eval-harness</code>. It simplifies the process of running evaluation jobs in a secure and manageable way.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_what_is_mmlu_pro"><a class="anchor" href="#_what_is_mmlu_pro"></a>What is MMLU-Pro?</h3>
+<div class="paragraph">
+<p><strong>MMLU-Pro</strong> is a reasoning-focused, multiple-choice benchmark derived from the original <a href="https://huggingface.co/datasets/cais/mmlu" target="_blank" rel="noopener">MMLU dataset</a>. MMLU-Pro extends the original MMLU benchmark by introducing 10-option multiple-choice questions across diverse academic disciplines. It&#8217;s designed to test a model&#8217;s <strong>reasoning, factual recall, and elimination skills</strong>—key for enterprise AI.</p>
+</div>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="mission.html">Mission Two</a></span>
+  <span class="next"><a href="section1.html">Setting Up the Trusty AI Environment</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <img src="../../../_/img/rhl-logo-red.png" height="40px" alt="Red Hat"  href="https://redhat.com" >
+</footer><script id="site-script" src="../../../_/js/site.js" data-ui-root-path="../../../_"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

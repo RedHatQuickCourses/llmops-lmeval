@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Interpreting Accuracy Results :: Evaluating Model Accuracy with LM-Eval-Harness</title>
+    <link rel="prev" href="section2.html">
+    <link rel="next" href="section4.html">
+    <meta name="generator" content="Antora 3.1.3">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://www.redhat.com" target="_blank"><img src="../../../_/img/redhat-logo.png" height="40px" alt="Red Hat"></a>
+      <a class="navbar-item" style="font-size: 24px; color: white" href="../../..">Evaluating Model Accuracy with LM-Eval-Harness</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://github.com/RedHatQuickCourses/REPLACEREPONAME/issues" target="_blank">Report Issues</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="llmops-lmeval" data-version="1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Evaluating Model Accuracy with LM-Eval-Harness</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Home</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../LABENV/index.html">Lab Environment</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="mission.html">Mission Two</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="index.html">Evaluating Model Accuracy with lm-eval-harness</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="section1.html">Setting Up the Trusty AI Environment</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="section2.html">Running a Standard Evaluation Job</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="section3.html">Interpreting Accuracy Results</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="section4.html">Running a Domain-Specific Test</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="section5.html">Course Wrap-up</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Evaluating Model Accuracy with LM-Eval-Harness</span>
+    <span class="version">1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Evaluating Model Accuracy with LM-Eval-Harness</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Evaluating Model Accuracy with LM-Eval-Harness</a></li>
+    <li><a href="index.html">Evaluating Model Accuracy with lm-eval-harness</a></li>
+    <li><a href="section3.html">Interpreting Accuracy Results</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Interpreting Accuracy Results</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Once the evaluation job is complete, the results are stored directly in the <code>LMEvalJob</code> custom resource. This module explains how to retrieve and understand these results.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_3_1_retrieve_the_results"><a class="anchor" href="#_3_1_retrieve_the_results"></a>3.1 Retrieve the Results</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Use <code>oc get</code> with a <code>jsonpath</code> template to extract the results from the job&#8217;s status field. We pipe it to <code>jq</code> for clean formatting.</p>
+<div class="listingblock execute">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">oc get LMEvalJob arc-easy-eval-job -n vllm -o jsonpath='{.status.results}' | jq '.results'</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>The command will return a JSON object similar to this:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "arc_easy": {
+    "alias": "arc_easy",
+    "acc,none": 0.8186026936026936,
+    "acc_stderr,none": 0.007907153952801706,
+    "acc_norm,none": 0.7836700336700336,
+    "acc_norm_stderr,none": 0.00844876352205705
+  }
+}</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_3_2_explanation_of_metrics"><a class="anchor" href="#_3_2_explanation_of_metrics"></a>3.2 Explanation of Metrics</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><code>acc,none</code>: This is the primary <strong>accuracy</strong> score. A value of <code>0.8186</code> means the model answered approximately 81.86% of questions correctly based on its raw, unmodified output.</p>
+</li>
+<li>
+<p><code>acc_norm,none</code>: This is the <strong>normalized accuracy</strong>. It represents the accuracy after the model&#8217;s answers have been cleaned up (e.g., removing extra spaces or standardizing capitalization). This is often a more realistic measure of performance. Here, it is 78.37%.</p>
+</li>
+<li>
+<p><code>acc_stderr,none</code>: This is the <strong>standard error</strong> for the accuracy score. It represents the margin of error, indicating how much the result might vary on a different sample of questions. A smaller number means the result is more statistically reliable.</p>
+</li>
+<li>
+<p><code>acc_norm_stderr,none</code>: This is the standard error for the normalized accuracy.</p>
+</li>
+</ul>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="section2.html">Running a Standard Evaluation Job</a></span>
+  <span class="next"><a href="section4.html">Running a Domain-Specific Test</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <img src="../../../_/img/rhl-logo-red.png" height="40px" alt="Red Hat"  href="https://redhat.com" >
+</footer><script id="site-script" src="../../../_/js/site.js" data-ui-root-path="../../../_"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
