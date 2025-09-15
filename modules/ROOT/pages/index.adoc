@@ -1,11 +1,6 @@
 = Evaluating Model Accuracy with lm-eval-harness
 :navtitle: Home
 
-== Introduction
-
-Course Title: Evaluating Model Accuracy with lm-eval-harness
-
-Description:
 This course teaches you how to measure the task-level accuracy and reasoning quality of Large Language Models on Red Hat OpenShift AI. You will learn to use `lm-eval-harness`, an industry-standard benchmarking framework, delivered via the Trusty AI operator. This hands-on lab will guide you through setting up the environment, running standardized evaluations like ARC and MMLU, and interpreting the quantitative results to assess a model's true capabilities.
 
 Duration: 1.5 hours

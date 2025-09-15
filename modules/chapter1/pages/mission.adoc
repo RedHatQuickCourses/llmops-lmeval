@@ -1,6 +1,6 @@
 // This section should be placed after the main course introduction.
 
-= Your Place in the Adventure
+= Mission Two
 
 Welcome, AI Operator! As you prepare to validate model accuracy, let's look at how this fits into the bigger picture. This course is a key mission in your learning adventure to master the "AI Factory"—a system where you control the balance between **Performance, Accuracy, and Cost**.
 
