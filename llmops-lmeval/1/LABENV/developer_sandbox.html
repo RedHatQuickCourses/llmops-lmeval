@@ -3,9 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Mission Two :: Evaluating Model Accuracy with LM-Eval-Harness</title>
-    <link rel="prev" href="../LABENV/index-lab-demo.html">
-    <link rel="next" href="index.html">
+    <title>Red Hat Developer Platform :: Evaluating Model Accuracy with LM-Eval-Harness</title>
     <meta name="generator" content="Antora 3.1.3">
     <link rel="stylesheet" href="../../../_/css/site.css">
     <script>var uiRootPath = '../../../_'</script>
@@ -48,10 +46,10 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../LABENV/index.html">Lab Environments</a>
+    <a class="nav-link" href="index.html">Lab Environments</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../LABENV/index-lab-demo.html">Red Hat Demo Hub: Lab Environment Selection</a>
+    <a class="nav-link" href="index-lab-demo.html">Red Hat Demo Hub: Lab Environment Selection</a>
   </li>
 </ul>
   </li>
@@ -59,27 +57,27 @@
   </li>
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
-  <li class="nav-item is-current-page" data-depth="1">
-    <a class="nav-link" href="mission.html">Mission Two</a>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../chapter1/mission.html">Mission Two</a>
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="index.html">Evaluating Model Accuracy with lm-eval-harness</a>
+    <a class="nav-link" href="../chapter1/index.html">Evaluating Model Accuracy with lm-eval-harness</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="section1.html">Setting Up the Trusty AI Environment</a>
+    <a class="nav-link" href="../chapter1/section1.html">Setting Up the Trusty AI Environment</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="section2.html">Running a Standard Evaluation Job</a>
+    <a class="nav-link" href="../chapter1/section2.html">Running a Standard Evaluation Job</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="section3.html">Interpreting Accuracy Results</a>
+    <a class="nav-link" href="../chapter1/section3.html">Interpreting Accuracy Results</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="section4.html">Running a Domain-Specific Test</a>
+    <a class="nav-link" href="../chapter1/section4.html">Running a Domain-Specific Test</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="section5.html">Course Wrap-up</a>
+    <a class="nav-link" href="../chapter1/section5.html">Course Wrap-up</a>
   </li>
 </ul>
   </li>
@@ -114,7 +112,7 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Evaluating Model Accuracy with LM-Eval-Harness</a></li>
-    <li><a href="mission.html">Mission Two</a></li>
+    <li><a href="developer_sandbox.html">Red Hat Developer Platform</a></li>
   </ul>
 </nav>
 </div>
@@ -123,59 +121,64 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Mission Two</h1>
-<div id="preamble">
+<h1 class="page">Red Hat Developer Platform</h1>
+<div class="sect1">
+<h2 id="_instructions_to_launch_your_lab_on_the_red_hat_developer_platform"><a class="anchor" href="#_instructions_to_launch_your_lab_on_the_red_hat_developer_platform"></a>Instructions to Launch Your Lab on the Red Hat Developer Platform</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>Welcome, AI Operator! As you prepare to validate model accuracy, let&#8217;s look at how this fits into the bigger picture. This course is a key mission in your learning adventure to master the "AI Factory"—a system where you control the balance between <strong>Performance, Accuracy, and Cost</strong>.</p>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_your_mission_log"><a class="anchor" href="#_your_mission_log"></a>Your Mission Log</h3>
-<div class="paragraph">
-<p>This entire learning path is a series of missions. Having established a performance baseline, your objective now is to understand the quality of your model.</p>
-</div>
-<div class="ulist">
-<ul>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
-<p><strong>Mission 1: Model Performance Benchmarking with GuideLLM</strong></p>
+<p><strong>Log in</strong> <strong>Red Hat Developer Sandbox</strong></p>
 </li>
 <li>
-<p><strong>This Mission: Evaluating Model Accuracy with lm-eval-harness</strong></p>
-<div class="openblock">
-<div class="content">
-<div class="paragraph">
-<p>A fast model that gives wrong answers is useless. Your task here is to get a hard, data-driven baseline of your model&#8217;s accuracy, answering the question: "Is this model smart enough for my application?"</p>
-</div>
-</div>
-</div>
+<p><strong>From</strong> from product menu dropdown entry: <strong>Select Red Hat OpenShift AI</strong>.</p>
 </li>
 <li>
-<p><strong>Mission 3: Optimizing vLLM Performance</strong></p>
+<p><strong>Click</strong> on the <strong>Try it our no cost developer sandbox</strong> button, once logged in, you will be taken the Red Hat Hybird Cloud Console dashboard.</p>
 </li>
 <li>
-<p><strong>Mission 4: Model Quantization with LLM Compressor</strong></p>
+<p>On the page, <strong>scroll down in the menu</strong> then under the OpenShift AI, select the <strong>Developer Sandbox | OpenShift AI</strong> option.</p>
 </li>
-</ul>
+<li>
+<p>Click on the <strong>Get Started</strong> button on the Start exploring Developer Sandbox launch the lab.</p>
+</li>
+<li>
+<p>Wait for the lab creation process to complete.</p>
+</li>
+<li>
+<p>When the lab is created, refer to the <strong>SSH Private Key &amp; Instructions</strong> on the page to access your lab.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+There is no GPU provided with this environment, so you will not be able to deploy the lab AI models.
+
+This is great solution for instantly ready lab environment to create a workbench, deploy an notebook, interact with your own remote model to develop and test scripts and notebooks, and perform any of OpenShift AI tasks that do not require a GPU, like design pipelines.
+
+Easy and Fast environment, but no control of the backend services, or admin access to OpenShift or OpenShift AI.
+</td>
+</tr>
+</table>
+</div>
+<iframe
+  src="https://demo.arcade.software/LHigl35cjrRDTQsQHomr?embed&embed_mobile=inline&embed_desktop=inline&show_copy_link=true"
+  width="100%"
+  height="600px"
+  frameborder="0"
+  allowfullscreen
+  webkitallowfullscreen
+  mozallowfullscreen
+  allow="clipboard-write"
+  muted>
+</iframe>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_the_rules_of_engagement"><a class="anchor" href="#_the_rules_of_engagement"></a>The Rules of Engagement</h3>
-<div class="paragraph">
-<p>A quick piece of intel: these labs are blueprints, not paint-by-numbers exercises. They are based on real-world patterns from successful customer engagements. You will be starting with a standard, resource-limited OpenShift AI environment.</p>
-</div>
-<div class="paragraph">
-<p>Your challenge is to <strong>adapt these blueprints</strong>. You will have to think like an operator, figuring out how to make these tools work within your constraints to achieve your goals.</p>
-</div>
-<div class="paragraph">
-<p>Now that you understand the mission, it&#8217;s time to learn how to measure a model&#8217;s true capabilities. Let&#8217;s get started with setting up the Trusty AI environment.</p>
-</div>
-</div>
-<nav class="pagination">
-  <span class="prev"><a href="../LABENV/index-lab-demo.html">Red Hat Demo Hub: Lab Environment Selection</a></span>
-  <span class="next"><a href="index.html">Evaluating Model Accuracy with lm-eval-harness</a></span>
-</nav>
 </article>
   </div>
 </main>
