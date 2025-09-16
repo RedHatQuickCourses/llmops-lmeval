@@ -19,7 +19,7 @@ A fast model that gives wrong answers is useless. Your task here is to get a har
 
 === The Rules of Engagement
 
-A quick piece of intel: these labs are blueprints, not paint-by-numbers exercises. They are based on real-world patterns from successful customer engagements. You will be starting with a standard, resource-limited OpenShift AI environment.
+A quick piece of intel: these labs are blueprints, not paint-by-numbers exercises. They are based on real-world patterns from successful customer engagements.
 
 Your challenge is to **adapt these blueprints**. You will have to think like an operator, figuring out how to make these tools work within your constraints to achieve your goals.
 
