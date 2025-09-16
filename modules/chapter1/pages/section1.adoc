@@ -2,6 +2,7 @@
 
 In this module, we will enable and configure the Trusty AI operator in OpenShift AI to prepare it for running evaluation jobs.
 
+
 === 1.1 Enable the Trusty AI Component
 
 First, we'll patch the default `DataScienceCluster` resource to change the management state of the `trustyai` component from "Removed" to "Managed".

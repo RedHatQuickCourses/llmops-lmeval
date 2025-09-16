@@ -4,6 +4,16 @@ With the environment ready, we can now define and run our first evaluation. We w
 
 === 2.1 Configure the Evaluation Job
 
+[]
+****
+Clone the vLLM optimization repo.
+[source,console,role=execute,subs=attributes+]
+----
+git clone https://github.com/redhat-ai-servicesetx-llm-optimization-and-inference-leveraging.git
+----
+****
+
+
 The evaluation is defined in a YAML file that specifies the `LMEvalJob` custom resource. The most important step is to point the job to your model's inference endpoint.
 
 . Edit the `workshop_code/evals/trusty/arc_easy.yaml` file and update the `base_url` value with your model's external inference URL.
